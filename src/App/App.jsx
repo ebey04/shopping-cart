@@ -1,13 +1,14 @@
 import { useState } from 'react'
-import { outlet } from 'react-router';
+import { Outlet } from 'react-router-dom';
 import './App.css'
+import Navbar from '../Navbar/Navbar';
 
 function App() {
 
 
   return (
     <>
-      {/* Navbar */}
+      <Navbar />
       <Outlet />
       {/* Footer */}
     </>
