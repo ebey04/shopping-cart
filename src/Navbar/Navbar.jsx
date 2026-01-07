@@ -8,9 +8,9 @@ export default function Navbar () {
         <div className={styles.container}>
             <h1>Mystic Jewels</h1>
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/shop">Shop Jewelry</Link>
-                <Link to="/cart"><img src={cart} alt="shopping cart icon" /></Link>
+                <Link className={styles.navLink} to="/">Home</Link>
+                <Link className={styles.navLink} to="/shop">Shop Jewelry</Link>
+                <Link className={styles.navLink} to="/cart"><img src={cart} alt="shopping cart icon" /></Link>
             </nav>
         </div>
     )
