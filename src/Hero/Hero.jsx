@@ -9,9 +9,9 @@ export default function Hero () {
             <h2>Ice Yourself</h2>
             <img className={styles.img} src= {heroImg} alt="Necklaces around a woman's neck" />
             
-             <div className={styles.cta}>
-        <Button>Find your new favorite</Button>
-      </div>
+            <div className={styles.cta}>
+                <Button>Find your new favorite</Button>
+            </div>
         </div>
     )
 }
