@@ -1,7 +1,7 @@
 .container{
     display:  grid;
     justify-content: center;
-    background-color: #cec9c4;
+    background-color: #dcd9d5;
 }
 
 nav {
@@ -24,4 +24,15 @@ h1{
 .navLink{
     font-size: 1.1rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    color: black;
+    letter-spacing: .15rem;
+}
+
+.navLink:hover, .navLink:focus-visible{
+    outline: none;
+    color: #885492;
+    text-shadow: 4px 4px 8px grey;
+    font-weight: 600;
+    font-size: 1.25rem;
 }

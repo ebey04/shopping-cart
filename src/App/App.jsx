@@ -5,10 +5,22 @@ import Navbar from '../Navbar/Navbar';
 
 function App() {
 
+  /* States */
+  const [cartTotal, setCartTotal] = useState(0)
+
+
+  /*Functions*/
+  const increment = () => {
+    setCartTotal(prevCount => prevCount + 1);
+  }
+  const decrement = () => {
+    setCartTotal(prevCount => prevCount - 1);
+  };
+
 
   return (
     <>
-      <Navbar />
+      <Navbar cartTotal={cartTotal} />
       <Outlet />
       {/* Footer */}
     </>
