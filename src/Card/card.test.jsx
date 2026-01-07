@@ -25,4 +25,11 @@ describe("Card", () => {
         expect(img).toBeInTheDocument();
         expect(img.src).toContain("test-image.jpg");
     });
+
+    it("renders a title when titleStr exists", () => {
+        render(<Card />);
+
+        const titleEl = screen.getByTestId("product-title");
+        expect(titleEl).toHaveTextContent(/.+/);
+    })
 });

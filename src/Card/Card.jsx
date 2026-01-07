@@ -9,9 +9,9 @@ const { imgURL } = useOutletContext();
         imgURL && ( 
         <div className={styles.card}>
             <img src={imgURL} alt="jewelry pieces" />
-            <p className={styles.price}>$48.88</p>
-            <p className={styles.title}>Gold Necklace</p>
-            <p className={styles.description}>blah blah blah</p>
+            <p data-testid="product-title" className={styles.title}></p>
+            <p className={styles.price}></p>
+            <p className={styles.description}></p>
             <Button>Add to Cart</Button>
         </div>
         )
