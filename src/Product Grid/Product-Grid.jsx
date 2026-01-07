@@ -5,8 +5,10 @@ export default function ProductGrid() {
     
 
     return(
+        <div className={styles.grid}> 
         <Card />
         <Card />
         <Card />
+        </div>
     )
 }

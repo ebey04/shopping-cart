@@ -1,6 +1,9 @@
 .card{
     display: flex;
     flex-direction: column;
-
-    border: 2px solid blue;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #dcd9d5;
+    box-shadow: 2px 2px 4px grey;
 }
