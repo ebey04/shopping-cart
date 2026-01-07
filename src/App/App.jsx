@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom';
 import './App.css'
 import Navbar from '../Navbar/Navbar';
@@ -10,7 +10,18 @@ function App() {
   /* States */
   const [cartTotal, setCartTotal] = useState(0);
   const [click, setClick] = useState();
+  const [imgURL, setImgURL] = useState(null);
 
+  const outletContext = {imgURL}
+
+  /* Effects */
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products/category/jewelery")
+
+    .then((response) => response.json())
+    .then((response) => setImgURL(response[0].image))
+    .catch((e) => console.error(e));
+  }, []);
 
   /*Functions*/
   const increment = () => {
@@ -27,7 +38,7 @@ function App() {
   return (
     <>
       <Navbar cartTotal={cartTotal} />
-      <Outlet />
+      <Outlet  context={outletContext} />
       <Footer />
     </>
   )
