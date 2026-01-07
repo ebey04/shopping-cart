@@ -1,6 +1,8 @@
 .container{
-    display:  grid;
+    display:  flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: #dcd9d5;
 }
 
@@ -16,7 +18,7 @@ nav img{
 }
 
 h1{
-    font-size: clamp(2rem, 3rem, 3vw);
+    font-size: clamp(2rem, 2rem, 2.25vw);
     font-family: 'Kite One';
     letter-spacing: .65rem;
 }
