@@ -13,6 +13,8 @@ vi.mock("react-router-dom", async () => {
         useOutletContext: () => ({
         imgURL: "https://example.com/test-image.jpg",
         titleEl: "Title",
+        priceEl: "$0.00",
+        descriptionEl: "blahblhalbah",
         }),
     };
 });
@@ -32,5 +34,17 @@ describe("Card", () => {
 
         const titleEl = screen.getByTestId("product-title");
         expect(titleEl).toHaveTextContent(/.+/);
+    })
+    it("renders price when priceStr exists", () => {
+        render(<Card />);
+
+        const priceEl = screen.getByTestId("product-price");
+        expect(priceEl).toHaveTextContent(/.+/);
+    })
+    it("renders description when descriptionStr exists", () => {
+        render(<Card />);
+
+        const descriptionEl = screen.getByTestId("product-description");
+        expect(descriptionEl).toHaveTextContent(/.+/);
     })
 });
