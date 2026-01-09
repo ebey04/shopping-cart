@@ -11,17 +11,35 @@ function App() {
   const [cartTotal, setCartTotal] = useState(0);
   const [click, setClick] = useState();
   const [imgURL, setImgURL] = useState(null);
+  const [titleEl, setTitleEl] = useState(null);
+  const [priceEl, setPriceEl] = useState(null);
+  const [descriptionEl, setDescriptionEl] = useState(null);
 
-  const outletContext = {imgURL}
+  const outletContext = {imgURL, titleEl, priceEl, descriptionEl }
 
   /* Effects */
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/jewelery")
+  UseEffect(() => {
+    async function fetchData() {
+      const url = "https://fakestoreapi.com/products/category/jewelery";
+      try {
+        const response = await fetch(url);
 
-    .then((response) => response.json())
-    .then((response) => setImgURL(response[0].image))
-    .catch((e) => console.error(e));
-  }, []);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        const setImgURL = data[0].image;
+        const setTitleEl = data.title;
+        const setPriceEl = data.price;
+        const setDescriptionEl = data.description;
+        
+      } catch (error) {
+        console.error("Fetch operation failed:", error);
+      }
+    }
+  })
 
   /*Functions*/
   const increment = () => {
