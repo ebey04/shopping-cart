@@ -12,6 +12,7 @@ vi.mock("react-router-dom", async () => {
         ...actual,
         useOutletContext: () => ({
         imgURL: "https://example.com/test-image.jpg",
+        titleEl: "Title",
         }),
     };
 });
