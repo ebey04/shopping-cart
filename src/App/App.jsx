@@ -30,16 +30,17 @@ function App() {
 
         const data = await response.json();
 
-        const setImgURL = data[0].image;
-        const setTitleEl = data.title;
-        const setPriceEl = data.price;
-        const setDescriptionEl = data.description;
+        setImgURL(data[0].image);
+        setTitleEl(data[0].title);
+        setPriceEl(data[0].price);
+        setDescriptionEl(data[0].description);
         
       } catch (error) {
         console.error("Fetch operation failed:", error);
       }
     }
-  })
+    fetchData();
+  }, []);
 
   /*Functions*/
   const increment = () => {
