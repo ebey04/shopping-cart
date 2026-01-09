@@ -18,7 +18,7 @@ function App() {
   const outletContext = {imgURL, titleEl, priceEl, descriptionEl }
 
   /* Effects */
-  UseEffect(() => {
+  useEffect(() => {
     async function fetchData() {
       const url = "https://fakestoreapi.com/products/category/jewelery";
       try {

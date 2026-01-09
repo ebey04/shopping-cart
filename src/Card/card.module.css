@@ -1,9 +1,33 @@
 .card{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 1.5rem;
     align-items: center;
     padding: 1rem;
     border: 2px solid #dcd9d5;
+    border-radius: 10px;
     box-shadow: 2px 2px 4px grey;
+    background-color: #fafafae9;
+    max-width: 70%;
+}
+
+.card img{
+    max-width: 100%;
+    max-height: 35%;
+    object-fit: contain;    
+    display: block;
+}
+
+.contents{
+    display: flex;
+    flex-direction: column;
+}
+
+.title, .price{
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.btn {
+    margin: 0 auto;
 }
