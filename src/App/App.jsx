@@ -10,12 +10,10 @@ function App() {
   /* States */
   const [cartTotal, setCartTotal] = useState(0);
   const [click, setClick] = useState();
-  const [imgURL, setImgURL] = useState(null);
-  const [titleEl, setTitleEl] = useState(null);
-  const [priceEl, setPriceEl] = useState(null);
-  const [descriptionEl, setDescriptionEl] = useState(null);
+  const [products, setProducts] = useState([]);
 
-  const outletContext = {imgURL, titleEl, priceEl, descriptionEl }
+
+  const outletContext = { products }
 
   /* Effects */
   useEffect(() => {
@@ -29,11 +27,7 @@ function App() {
         }
 
         const data = await response.json();
-
-        setImgURL(data[0].image);
-        setTitleEl(data[0].title);
-        setPriceEl(data[0].price);
-        setDescriptionEl(data[0].description);
+        setProducts(data);
         
       } catch (error) {
         console.error("Fetch operation failed:", error);

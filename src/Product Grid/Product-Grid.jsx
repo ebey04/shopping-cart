@@ -1,14 +1,24 @@
 import styles from "./product-grid.module.css"
 import Card from "../Card/Card"
+import { useOutletContext } from 'react-router-dom';
 
 export default function ProductGrid() {
-    
+    const { products } = useOutletContext();
 
     return(
         <div className={styles.grid}> 
-        <Card />
-        <Card />
-        <Card />
+
+        {products.map(product => (
+            <Card 
+            key= {product.id} 
+            imgURL= {product.image} 
+            titleEl= {product.title} 
+            priceEl= {product.price} 
+            descriptionEl= {product.description}
+            />
+            ))}
+
         </div>
     )
 }
+

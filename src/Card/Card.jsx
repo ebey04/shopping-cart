@@ -1,9 +1,7 @@
 import styles from "./card.module.css"
 import Button from "../Button/Button"
-import { useOutletContext } from 'react-router-dom';
 
-export default function Card() {
-const { imgURL, titleEl, priceEl, descriptionEl } = useOutletContext();
+export default function Card({ imgURL, titleEl, priceEl, descriptionEl }) {
     
     return (
         imgURL && ( 
