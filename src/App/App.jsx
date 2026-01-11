@@ -8,7 +8,6 @@ import Footer from '../Footer/Footer';
 function App() {
 
   /* States */
-  const [click, setClick] = useState();
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
 
@@ -44,7 +43,7 @@ function App() {
   const addToCart = (product) => {setCartItems(prev => [...prev, product])};
 
 
-    const outletContext = { products, addToCart }
+  const outletContext = { products, addToCart }
 
 
   return (
