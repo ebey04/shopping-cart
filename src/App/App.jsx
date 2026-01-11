@@ -8,12 +8,10 @@ import Footer from '../Footer/Footer';
 function App() {
 
   /* States */
-  const [cartTotal, setCartTotal] = useState(0);
   const [click, setClick] = useState();
   const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-
-  const outletContext = { products }
 
   /* Effects */
   useEffect(() => {
@@ -43,14 +41,15 @@ function App() {
   const decrement = () => {
     setCartTotal(prevCount => prevCount - 1);
   };
-  // const handleClick = () => {
-  //   setClick();
-  // }
+  const addToCart = (product) => {setCartItems(prev => [...prev, product])};
+
+
+    const outletContext = { products, addToCart }
 
 
   return (
     <>
-      <Navbar cartTotal={cartTotal} />
+      <Navbar cartItems={cartItems} />
       <Outlet  context={outletContext} />
       <Footer />
     </>

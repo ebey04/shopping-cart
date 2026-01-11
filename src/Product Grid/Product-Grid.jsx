@@ -3,7 +3,7 @@ import Card from "../Card/Card"
 import { useOutletContext } from 'react-router-dom';
 
 export default function ProductGrid() {
-    const { products } = useOutletContext();
+    const { products, addToCart } = useOutletContext();
 
     return(
         <div className={styles.grid}> 
@@ -15,6 +15,9 @@ export default function ProductGrid() {
             titleEl= {product.title} 
             priceEl= {product.price} 
             descriptionEl= {product.description}
+
+            product= {product}
+            addToCart= {addToCart}
             />
             ))}
 
