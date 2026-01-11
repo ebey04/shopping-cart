@@ -12,6 +12,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
 
+
   /* Effects */
   useEffect(() => {
     async function fetchData() {
@@ -40,10 +41,11 @@ function App() {
   const decrement = () => {
     setCartTotal(prevCount => prevCount - 1);
   };
-  const addToCart = (product) => {setCartItems(prev => [...prev, product])};
+  const addToCart = (product) => {setCartItems(prev => [...prev, product])
+  };
 
 
-  const outletContext = { products, addToCart }
+  const outletContext = { products, addToCart}
 
 
   return (
