@@ -1,26 +1,38 @@
 import styles from "./card.module.css"
 import Button from "../Button/Button"
 import { useOutletContext } from 'react-router-dom';
+import { useState} from 'react';
 
-export default function Card({ imgURL, titleEl, priceEl}) {
-    const { addToCart, products } = useOutletContext();
-    const product = {
-        imgURL,
-        titleEl,
-        priceEl,
-    };
+export default function Card({ product}) {
+    const { addToCart, products, cartItems, increment, decrement } = useOutletContext();
+    
+
+    const cartItem = cartItems.find(item => item.id === product.id);
+    const inCart = Boolean(cartItem);
+    const quantity = cartItem?.quantity ?? 0;
+
 
     return (
-        imgURL && ( 
+        product.image && ( 
         <div className={styles.card}>
             <div className={styles.media}> 
-                <img src={imgURL} alt="jewelry pieces" />
+                <img src={product.image} alt="jewelry pieces" />
             </div>
             <div className={styles.contents}>
-            <p data-testid="product-title" className={styles.title}>{titleEl}</p>
-            <p data-testid="product-price" className={styles.price}>${priceEl}</p>
+            <p data-testid="product-title" className={styles.title}>{product.title}</p>
+            <p data-testid="product-price" className={styles.price}>${product.price}</p>
             </div>
-            <div className= {styles.btn}><Button onClick={() => addToCart(product)}>Add to Cart</Button> </div>
+            <div className= {styles.btn}>
+                {inCart ? (
+                    <div className={styles.qty}>
+                        <Button onClick={() => decrement(product.id)}>-</Button>
+                        <span>{quantity}</span>
+                        <Button onClick={() => increment(product.id)}>+</Button>
+                    </div>
+                    ) : (
+                    <Button onClick={() => addToCart(product)}>Add to Cart</Button>
+                )}
+            </div>
         </div>
         )
     )

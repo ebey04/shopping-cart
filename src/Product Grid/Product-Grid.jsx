@@ -11,12 +11,11 @@ export default function ProductGrid() {
         {products.map(product => (
             <Card 
             key= {product.id} 
+            product = {product}
             imgURL= {product.image} 
             titleEl= {product.title} 
             priceEl= {product.price} 
             descriptionEl= {product.description}
-
-            product= {product}
             addToCart= {addToCart}
             />
             ))}
