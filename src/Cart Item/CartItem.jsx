@@ -3,7 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import Button from "../Button/Button"
 
 export default function CartItem({item}) {
-    const { products, cartItems } = useOutletContext();
+    const { products, cartItems, increment, decrement } = useOutletContext();
 
     return (
         <div className= {styles.prodRow}>

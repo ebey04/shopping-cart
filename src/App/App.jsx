@@ -49,6 +49,13 @@ const addToCart = (product) => {
   });
 };
 
+const removeFromCart = (product) => {
+  setCartItems(items =>
+    items.filter(item => item.id !== product.id)
+  );
+};
+
+
 const increment = (id) => {
   setCartItems(items =>
     items.map(item =>
@@ -63,7 +70,7 @@ const decrement = (id) => {
   setCartItems(items =>
     items.map(item =>
       item.id === id
-        ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+        ? { ...item, quantity: Math.max(0, item.quantity - 1) }
         : item
     )
   );
@@ -71,7 +78,7 @@ const decrement = (id) => {
 
 
 
-  const outletContext = { products, addToCart, cartItems, increment, decrement }
+  const outletContext = { products, addToCart, cartItems, increment, decrement, removeFromCart }
 
 
   return (

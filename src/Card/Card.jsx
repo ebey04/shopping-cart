@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router-dom';
 import { useState} from 'react';
 
 export default function Card({ product}) {
-    const { addToCart, products, cartItems, increment, decrement } = useOutletContext();
+    const { addToCart, products, cartItems, increment, decrement, removeFromCart } = useOutletContext();
     
 
     const cartItem = cartItems.find(item => item.id === product.id);
@@ -24,11 +24,15 @@ export default function Card({ product}) {
             </div>
             <div className= {styles.btn}>
                 {inCart ? (
-                    <div className={styles.qty}>
-                        <Button onClick={() => decrement(product.id)}>-</Button>
-                        <span>{quantity}</span>
-                        <Button onClick={() => increment(product.id)}>+</Button>
-                    </div>
+                    quantity > 0? (
+                        <div className={styles.qty}>
+                            <Button onClick={() => decrement(product.id)}>-</Button>
+                            <span>{quantity}</span>
+                            <Button onClick={() => increment(product.id)}>+</Button>
+                        </div> 
+                        ) : (
+                        <Button onClick={() => removeFromCart(product)}>Remove from Cart</Button>
+                        )
                     ) : (
                     <Button onClick={() => addToCart(product)}>Add to Cart</Button>
                 )}
