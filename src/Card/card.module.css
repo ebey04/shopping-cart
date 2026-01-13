@@ -44,10 +44,10 @@
 }
 
 .delete{
-    background-color: red;
+    background-color: #C41E3D;
     border-radius: 10px;
     border: none;
-    color: black;
+    color: white;
     padding: 12px 24px;
     font-size: 1rem;
     box-shadow: 3px 3px 6px grey;
