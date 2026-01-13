@@ -31,7 +31,7 @@ export default function Card({ product}) {
                             <Button onClick={() => increment(product.id)}>+</Button>
                         </div> 
                         ) : (
-                        <Button onClick={() => removeFromCart(product)}>Remove from Cart</Button>
+                        <Button className={styles.delete} onClick={() => removeFromCart(product)}>Remove from Cart</Button>
                         )
                     ) : (
                     <Button onClick={() => addToCart(product)}>Add to Cart</Button>
