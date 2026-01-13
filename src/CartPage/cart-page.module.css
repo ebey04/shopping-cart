@@ -1,3 +1,6 @@
+h3{
+    font-size: clamp(1.5rem, 3rem, 5vh);
+}
 .bottom{
     display: flex;
     justify-content: space-between;
@@ -8,10 +11,17 @@
     font-size: 1.25rem;
 }
 
+
 .totals > p:first-child{
     font-size: 1.25rem;
 }
 
 .totals > P:last-child{
     color: rgb(85, 85, 85);
+}
+
+@media screen and (max-width: 600px) {
+    .bottom{
+        flex-wrap: wrap;
+    }
 }

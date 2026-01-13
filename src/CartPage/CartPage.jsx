@@ -27,8 +27,8 @@ export default function CartPage () {
             </div>
             <div className={styles.bottom}>
                 <div className={styles.notes}>
-                    <p>Gift Note/Additional Instruction</p>
-                    <textarea name="addInfo" rows="4" cols="30" />
+                    <p>Gift Note/Additional Instructions</p>
+                    <textarea name="addInfo" rows="5" cols="30" />
                 </div>
                 <div className={styles.totals}> 
                     <p>Estimated Total: ${total}</p>
