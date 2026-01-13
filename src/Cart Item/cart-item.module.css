@@ -1,0 +1,36 @@
+.prodRow{
+    border-bottom: 5px double rgb(231, 229, 229);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.media{
+    aspect-ratio: 1/1;
+    width: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.media img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    
+    display: block;
+}
+
+.qty{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.subtotal{
+    font-size: 1.25rem;
+    letter-spacing: .2rem;
+}
