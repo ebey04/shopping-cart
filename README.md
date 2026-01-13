@@ -6,7 +6,7 @@ This project demonstrates state management, conditional rendering, routing, and 
 ---
 
 ## 🔗 Live Demo
-
+https://shopping-cart-mystic-jewels.netlify.app/
 
 ## ✨ Features
 
