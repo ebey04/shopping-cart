@@ -34,3 +34,20 @@
     font-size: 1.25rem;
     letter-spacing: .2rem;
 }
+
+.delete{
+    background-color: #C41E3D;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 3px 3px 6px grey;
+    cursor: pointer;
+    width: 10rem;
+}
+
+.delete:hover, .delete:focus-visible{
+    transform: translateY(-5px);
+    outline: none;
+    box-shadow: 6px 6px 10px black;
+}
