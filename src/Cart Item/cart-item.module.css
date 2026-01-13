@@ -23,6 +23,12 @@
     display: block;
 }
 
+.title{
+    max-width: 30ch;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+}
+
 .qty{
     display: flex;
     gap: 2rem;

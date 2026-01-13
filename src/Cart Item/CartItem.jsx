@@ -12,6 +12,7 @@ export default function CartItem({ item }) {
         <div className={styles.media}>
             <img src={item.image} alt="jewelry pieces" />
         </div>
+        <p className={styles.title}>{item.title}</p>
 
         {quantity > 0 ? (
             <div className={styles.qty}>
