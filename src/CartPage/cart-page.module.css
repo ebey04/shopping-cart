@@ -1,0 +1,17 @@
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.notes{
+    font-size: 1.25rem;
+}
+
+.totals > p:first-child{
+    font-size: 1.25rem;
+}
+
+.totals > P:last-child{
+    color: rgb(85, 85, 85);
+}

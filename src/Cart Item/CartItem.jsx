@@ -6,6 +6,7 @@ export default function CartItem({ item }) {
     const { increment, decrement, removeFromCart } = useOutletContext();
 
     const quantity = item.quantity;
+    const subtotal = item.price * item.quantity;
 
     return (
         <div className={styles.prodRow}>
@@ -24,7 +25,7 @@ export default function CartItem({ item }) {
             <Button className={styles.delete} onClick={() => removeFromCart(item)}>Remove from Cart</Button>
         )}
         <div className={styles.subtotal}>
-            <p>Subtotal: ${item.price * item.quantity}</p>
+            <p>Subtotal: ${subtotal}</p>
         </div>
         </div>
     );
